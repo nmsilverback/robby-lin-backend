@@ -12,6 +12,7 @@ exports.up = function(knex) {
       user.string('city', 124);
       user.string('state', 124);
       user.integer('zip', 62);
+      user.number('oauth_id', 124);
   })
   .createTable('favorites', favorite=>{
       favorite.integer('user_id').unsigned().notNullable().references('id').inTable('users').onDelete('CASCADE').onUpdate('CASCADE');
